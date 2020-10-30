@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 
 @Component({
     selector: 'recipeShop-header',
@@ -8,6 +8,18 @@ import {Component, OnInit} from "@angular/core";
 })
 
 export class RecipeShopHeader {
-    title ='mesay'
+ 
+
+    @Output() featureSelected = new EventEmitter<string>();
+    // @Output() openShopping = new EventEmitter<string>();
+
+
+    onSelect(feature: string){
+        this.featureSelected.emit(feature)
+    }
+
+    // onOpenShopping(){
+    //     this.openShopping.emit('shopping')
+    // }
 
 }
